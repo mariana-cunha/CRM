@@ -92,6 +92,14 @@
     border-radius: 0.5rem;
 }
 
+.conteudo > .titulo {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+      
+}
+
 .colunas { 
     display: flex;
 }
@@ -112,6 +120,16 @@
     cursor: pointer;
     border-radius: 0.25rem;
     background-color: lightgray;
+}
+
+#cadastro {
+    display: flex;
+    flex-direction: column;
+}
+
+#cadastro input, #cadastro select {
+    padding: 6px;
+    margin: 5px;
 }
 
 .cadastro-topo { 
