@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formulário de interesse</title>
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -13,6 +13,36 @@
         <a href="./login.html">Login</a> 
         <a href="./cadastro.html">Cadastro</a>
     </div>
-    <h1>formulário de cadastro</h1>
+
+    <div class="home">
+        <div>
+            <h1>formulário de cadastro</h1>
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi minus corporis necessitatibus maxime quod, ea fugiat qui eum deserunt repudiandae numquam! Delectus magni consectetur numquam necessitatibus natus facilis officiis ea!</span>
+        </div>
+        
+
+        <div class="formularioInteresse">
+            <form class="interesse" action="">
+                <input type="text" placeholder="Seu nome" required name="nome">
+                <input type="text" placeholder="E-mail corporativo" required name="email">
+                <input type="text" placeholder="Whatsapp" required name="nome">
+                <select name="ocupação" id="cargo">
+                    <option value="">Ocupação</option>
+                    <option value="vendedor">Vendedor</option>
+                    <option value="Administrador">Administrador</option>
+                    <option value="outros">Outros</option>
+                </select>
+                <select name="vendedores" id="vendedores">
+                    <option value="">Quantos vendedores você tem?</option>
+                    <option value="1">1 a 5</option>
+                    <option value="5">5 a 10</option>
+                    <option value="outros">outros</option>
+                </select>
+                <!-- <input type="submit" value="Enviar"> -->
+                <button type="submit" onclick=""><a href="./login.html">Enviar</a></button>
+            </form>
+        </div>
+    </div>
+    
 </body>
 </html>

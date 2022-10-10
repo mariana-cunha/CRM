@@ -1,14 +1,18 @@
+// 1 - Login
+
+
+// 2 - formulário de Interesse
+
+
+
+// 3 - Página de cadastro de interesse
+
 let modal = document.querySelector(".modal");
 let botaoAbrir = document.querySelector(".trigger");
 let botaoFechar = document.querySelector(".botaoFechar")
 
-// console.log("modal", modal)
-// console.log("abrir", botaoAbrir)
-// console.log("fechar", botaoFechar)
-
 const popup = () => {
     modal.classList.toggle("modalAberto");
-    
 }
 
 function clicar(event) {
