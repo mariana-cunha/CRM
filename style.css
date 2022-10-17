@@ -23,6 +23,12 @@
     background-color: white;
 }
 
+@media (max-width: 414px) {
+    .home {
+        flex-direction: column;
+    }
+}
+
 .home > div {
     max-width: 400px;
     margin: 40px;
