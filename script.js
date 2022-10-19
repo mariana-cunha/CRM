@@ -1,5 +1,19 @@
 // 1 - Login
 
+const login = () => {
+    const loginInput = document.getElementById("emailLogin").value;
+    const senhaInput = document.getElementById("senhaLogin").value;
+
+    localStorage.setItem("emailLogin", loginInput);
+    localStorage.setItem("senha", senhaInput);
+
+    console.log("email: ", localStorage.emailLogin)
+    console.log("senha: ", localStorage.senha)
+
+}
+
+
+
 
 // 2 - formulário de Interesse
 
@@ -46,28 +60,29 @@ const cadastroOportunidade = () => {
         localStorage.setItem("email", inputEmailModal);
 
         modal.classList.toggle("modalAberto");
-
-        // let dadosLocais = JSON.stringify(localStorage);
-        // console.log(dadosLocais)
-    
-        const getDados = JSON.stringify(localStorage);
-        console.log("getDados stringy", getDados)
-
-        // getDados.forEach((item) => {
-        //     criarLista(item);
-        // });
-
         
+        criarLista(localStorage)
     })
 
-    const criarLista = (text) => {
-        const itemLista = document.createElement("li");
-        itemLista.className = "itens";
+    const criarLista = (localStorage) => {
+        const itemNome = document.createElement("li");
+        const itemFunil = document.createElement("li");
+        const itemCampanha = document.createElement("li");
+        const itemEmail = document.createElement("li");
 
-        itemLista.innerHTML = text;
-        lista.appendChild(itemLista);
+        itemNome.className = "itens";
+        itemFunil.className = "itens";
+        itemCampanha.className = "itens";
+        itemEmail.className = "itens";
+
+        itemNome.textContent = "Nome: " + localStorage.nome;
+        itemFunil.textContent = "Funil: " + localStorage.funil;
+        itemCampanha.textContent = "Campanha: " + localStorage.campanha;
+        itemEmail.textContent = "Email: " + localStorage.email;
+
+        lista.appendChild(itemNome);
+        lista.appendChild(itemFunil);
+        lista.appendChild(itemCampanha);
+        lista.appendChild(itemEmail);
     }
-    
-
-    
 }
