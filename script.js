@@ -7,12 +7,16 @@ const login = () => {
     localStorage.setItem("emailLogin", loginInput);
     localStorage.setItem("senha", senhaInput);
 
+    if(localStorage.emailLogin && localStorage.senha) {
+        alert("Login realizado com sucesso")
+    } else {
+        alert("Tente novamente")
+    }
+
     console.log("email: ", localStorage.emailLogin)
     console.log("senha: ", localStorage.senha)
 
 }
-
-
 
 
 // 2 - formulário de Interesse
@@ -45,6 +49,28 @@ const formModal = document.getElementById("cadastroModal");
 const enviarModal = document.getElementById("enviarModal");
 const lista = document.getElementById("lista");
 
+const criarLista = (localStorage) => {
+    const itemNome = document.createElement("li");
+    const itemFunil = document.createElement("li");
+    const itemCampanha = document.createElement("li");
+    const itemEmail = document.createElement("li");
+
+    itemNome.className = "itens";
+    itemFunil.className = "itens";
+    itemCampanha.className = "itens";
+    itemEmail.className = "itens";
+
+    itemNome.textContent = "Nome: " + localStorage.nome;
+    itemFunil.textContent = "Funil: " + localStorage.funil;
+    itemCampanha.textContent = "Campanha: " + localStorage.campanha;
+    itemEmail.textContent = "Email: " + localStorage.email;
+
+    lista.appendChild(itemNome);
+    lista.appendChild(itemFunil);
+    lista.appendChild(itemCampanha);
+    lista.appendChild(itemEmail);
+}
+
 const cadastroOportunidade = () => {
     formModal.addEventListener("submit", (event) => {
         event.preventDefault();
@@ -64,25 +90,8 @@ const cadastroOportunidade = () => {
         criarLista(localStorage)
     })
 
-    const criarLista = (localStorage) => {
-        const itemNome = document.createElement("li");
-        const itemFunil = document.createElement("li");
-        const itemCampanha = document.createElement("li");
-        const itemEmail = document.createElement("li");
+}
 
-        itemNome.className = "itens";
-        itemFunil.className = "itens";
-        itemCampanha.className = "itens";
-        itemEmail.className = "itens";
-
-        itemNome.textContent = "Nome: " + localStorage.nome;
-        itemFunil.textContent = "Funil: " + localStorage.funil;
-        itemCampanha.textContent = "Campanha: " + localStorage.campanha;
-        itemEmail.textContent = "Email: " + localStorage.email;
-
-        lista.appendChild(itemNome);
-        lista.appendChild(itemFunil);
-        lista.appendChild(itemCampanha);
-        lista.appendChild(itemEmail);
-    }
+if(localStorage.length > 5){
+    criarLista(localStorage)
 }
